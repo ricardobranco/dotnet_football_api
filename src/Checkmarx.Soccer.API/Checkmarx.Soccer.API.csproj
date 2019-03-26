@@ -8,6 +8,17 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Modules\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Services\" />
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Checkmarx.Soccer.FootballData\Checkmarx.Soccer.FootballData.csproj" />
+  </ItemGroup>
 </Project>
