@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Checkmarx.Soccer.FootballData.Interfaces;
 using Checkmarx.Soccer.FootballData.Models;
@@ -15,28 +16,20 @@ namespace Checkmarx.Soccer.FootballData.Services
             _api = api;
         }
 
-        public Task<Competitions> GetCompetitions()
+        public async Task<IEnumerable<Competition>> GetCompetitions()
         {
             var request = new RestRequest("competitions", Method.GET);
             request.AddQueryParameter("plan", "TIER_ONE");
-            return _api.Execute<Competitions>(request);
-
+            return (await _api.Execute<Competitions>(request)).CompetitionList;
         }
 
-        public Task<CompetitionTeams> GetTeamsOfCompetition(string competitionCode)
-        {
-            var request = new RestRequest("competitions/{code/teams", Method.GET);
-            request.AddParameter("code", competitionCode);
-            return _api.Execute<CompetitionTeams>(request);
-        }
-
-
-        public Task<CompetitionStandings> GetCompetitionStandings(string competitionCode)
+        public Task<CompetitionStandings> GetCompetitionStandings<T>(T competetion)
         {
             var request = new RestRequest("competitions/{code}/standings", Method.GET);
-            request.AddParameter("code", competitionCode);
+            request.AddParameter("code", competetion, ParameterType.UrlSegment);
             request.AddQueryParameter("standingType", "TOTAL");
             return _api.Execute<CompetitionStandings>(request);
         }
+
     }
 }

@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using RestSharp.Serializers;
+using RestSharp.Deserializers;
 
 namespace Checkmarx.Soccer.FootballData.Models
 {
     public class Competitions
     {
-        [SerializeAs(Name = "competitions")]
-        public IList<Competition> CompetitionList { get; set; }
+        [DeserializeAs(Name = "competitions")]
+        public IEnumerable<Competition> CompetitionList { get; set; }
     }
 }

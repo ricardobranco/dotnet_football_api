@@ -4,6 +4,7 @@ namespace Checkmarx.Soccer.FootballData.Models
 {
     public class CompetitionStandings
     {
-        public IList<Standing> Standings { get; set; }
+        public Competition Competition { get; set; }
+        public IEnumerable<Standing> Standings { get; set; }
     }
 }

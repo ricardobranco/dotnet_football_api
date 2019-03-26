@@ -6,6 +6,6 @@ namespace Checkmarx.Soccer.FootballData.Models
 {
     public class CompetitionTeams
     {
-        public IList<Team> Teams { get; set; }
+        public IEnumerable<Team> Teams { get; set; }
     }
 }
