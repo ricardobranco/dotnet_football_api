@@ -20,5 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Checkmarx.Soccer.FootballData\Checkmarx.Soccer.FootballData.csproj" />
+    <ProjectReference Include="..\Checkmarx.Soccer.Infrastructure\Checkmarx.Soccer.Infrastructure.csproj" />
   </ItemGroup>
 </Project>
