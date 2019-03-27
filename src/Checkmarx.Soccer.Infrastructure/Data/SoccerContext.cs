@@ -17,10 +17,22 @@ namespace Checkmarx.Soccer.Infrastructure.Data
         public DbSet<Team> Teams { get; set; }
         public DbSet<TableItem> TableItems { get; set; }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            //todo: only for dev purpose
+            optionsBuilder.UseLazyLoadingProxies();
+        }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            //builder.Entity<Competition>(ConfigureCompetition);
             builder.Entity<TableItem>(ConfigureTableItem);
+        }
+
+        private void ConfigureCompetition(EntityTypeBuilder<Competition> builder)
+        {
+            builder.HasMany(i => i.Standings)
+                .WithOne(s => s.Competition);
         }
 
         private void ConfigureTableItem(EntityTypeBuilder<TableItem> builder)
