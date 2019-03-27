@@ -120,6 +120,7 @@ namespace Checkmarx.Soccer.API.Services
                                 TeamId = team.Id,
                                 StandingId = standing.Id,
                                 Position = fetchTableTeam.Position,
+                                Points = fetchTableTeam.Points,
                                 PlayedGames = fetchTableTeam.PlayedGames,
                                 Won = fetchTableTeam.Won,
                                 Draw = fetchTableTeam.Draw,
@@ -133,6 +134,7 @@ namespace Checkmarx.Soccer.API.Services
                         else
                         {
                             tableItem.Position = fetchTableTeam.Position;
+                            tableItem.Points = fetchTableTeam.Points;
                             tableItem.PlayedGames = fetchTableTeam.PlayedGames;
                             tableItem.Won = fetchTableTeam.Won;
                             tableItem.Draw = fetchTableTeam.Draw;
@@ -174,6 +176,7 @@ namespace Checkmarx.Soccer.API.Services
                        Name = team.Team.Name,
                        Position = team.Position,
                        PlayedGames = team.PlayedGames,
+                       Points = team.Points,
                        Won = team.Won,
                        Draw = team.Draw,
                        Lost = team.Lost,
