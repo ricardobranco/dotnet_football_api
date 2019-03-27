@@ -5,7 +5,7 @@ using Checkmarx.Soccer.API.ViewModels;
 
 namespace Checkmarx.Soccer.API.Interfaces
 {
-    public interface ICompetitionService
+    public interface ICompetitionViewModelService
     {
         Task<IEnumerable<CompetitionAreaViewModel>> GetCompetitions();
         Task<CompetitionWithStandingsViewModel> GetCompetitionWithStandings(int competitionId);

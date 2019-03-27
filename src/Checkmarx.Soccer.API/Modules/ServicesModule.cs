@@ -9,8 +9,8 @@ namespace Checkmarx.Soccer.API.Modules
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<CompetitionService>()
-                .As<ICompetitionService>();
+            builder.RegisterType<CompetitionViewModelService>()
+                .As<ICompetitionViewModelService>();
         }
     }
 }

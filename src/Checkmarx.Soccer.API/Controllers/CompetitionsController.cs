@@ -9,9 +9,9 @@ namespace Checkmarx.Soccer.API.Controllers
     [Route("api/[controller]")]
     public class CompetitionsController : ControllerBase
     {
-        private readonly ICompetitionService _competitionService;
+        private readonly ICompetitionViewModelService _competitionService;
 
-        public CompetitionsController(ICompetitionService competitionService)
+        public CompetitionsController(ICompetitionViewModelService competitionService)
         {
             _competitionService = competitionService;
         }

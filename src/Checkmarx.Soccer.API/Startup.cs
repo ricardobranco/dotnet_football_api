@@ -41,6 +41,7 @@ namespace Checkmarx.Soccer.API
             var container = new ContainerBuilder();
             container.Populate(services);
             container.RegisterModule(new FootballDataModule(Configuration.GetSection("FootballDataSettings").Get<FootballDataSettings>()));
+            container.RegisterModule(new RepositoryModule());
             container.RegisterModule(new ServicesModule());
             return new AutofacServiceProvider(container.Build());
         }
