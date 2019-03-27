@@ -4,9 +4,9 @@ namespace Checkmarx.Soccer.Domain.Entities
     public class TableItem : BaseEntity
     {
         public int TeamId { get; set; }
-        public Team Team { get; set; }
+        public virtual Team Team { get; set; }
         public int StandingId { get; set; }
-        public Standing Standing { get; set; }
+        public virtual Standing Standing { get; set; }
         public int Position { get; set; }
         public int PlayedGames { get; set; }
         public int Won { get; set; }
