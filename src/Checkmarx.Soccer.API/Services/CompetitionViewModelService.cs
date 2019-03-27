@@ -152,7 +152,7 @@ namespace Checkmarx.Soccer.API.Services
             {
                 Id = competition.Id,
                 Name = competition.Name,
-                Standings = BuildStandings(competition.Standings)
+                Standings = BuildStandings(competition.Standings.OrderBy(s => s.Group))
             };
         }
 
@@ -162,7 +162,7 @@ namespace Checkmarx.Soccer.API.Services
                    select new StandingViewModel
                    {
                        Group = standing.Group,
-                       Table = BuildTable(standing.Table)
+                       Table = BuildTable(standing.Table.OrderBy(t => t.Position))
                    };
         }
 
